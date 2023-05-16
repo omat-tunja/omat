@@ -1,0 +1,26 @@
+<header id="header" class="fixed-top ">
+  <div class="container d-flex align-items-center justify-content-lg-between">
+    <a href="{{url_for('index')}}" class="logo me-auto me-lg-0"><img src="../static/assets/img/logo.png" alt=""
+        class="img-fluid"></a>
+    <nav id="navbar" class="navbar order-lg-0">
+      <ul>
+        <!-- <li><a class="nav-link scrollto active" href="{{url_for('index')}}">INICIO</a></li> -->
+        <li><a class="nav-link scrollto" href="{{url_for('reporte')}}">REPORTE</a></li>
+        <li><a class="nav-link scrollto" href="{{url_for('transito')}}">TRANSITO</a></li>
+        <li><a class="nav-link scrollto" href="{{url_for('transporte')}}">TRANSPORTE</a></li>
+        <li><a class="nav-link scrollto" href="{{url_for('infraestructura')}}">INFRAESTRUCTURA</a></li>
+        <li><a class="nav-link scrollto" href="{{url_for('revista')}}">REVISTA</a></li>
+        {% if current_user.is_authenticated %}
+          {% if current_user.is_admin %}
+            <li><a href="{{ url_for('register') }}">NUEVO USUARIO</a></li>
+            <li><a href="{{ url_for('nuevo') }}">NUEVO DOCUMENTO</a></li>
+          {% endif %}
+            <li><a href="{{ url_for('logout') }}">SALIR</a></li>
+          {% else %}
+            <li><a href="{{ url_for('login') }}">INICIAR SESION</a></li>
+          {% endif %}
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+  </div>
+</header>

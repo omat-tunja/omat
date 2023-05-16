@@ -1,0 +1,21 @@
+<section id="features" class="features">
+  <div class="container" data-aos="fade-up">
+    <b>
+      <h3 style="color:rgba(244, 196, 8, 0.927)">Documentos</h3>
+    </b>
+    <div class="row">
+      <div class="" data-aos="fade-left" data-aos-delay="100">
+        {% for documento in items %}
+        <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+          <i class="bx bx-receipt"></i>
+          <h4><a class="black" href="{{documento.enlace}}">{{documento.titulo}}</a></h4>
+          {% if current_user.is_admin %}
+            <a class="btn btn-warning bi bi-pencil-square" href="{{ url_for('editar', id=documento.id) }}"></a>
+            <a class="btn btn-danger bi bi-trash-fill" href="{{ url_for('eliminar', id=documento.id) }}"></a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

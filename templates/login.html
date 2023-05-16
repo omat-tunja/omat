@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Omat{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="text-center mb-4">Iniciar sesión de administrador</h2>
+      {% if message %}
+      <div class="alert alert-danger" role="alert">
+        {{ message }}
+      </div>
+      {% endif %}
+      <form method="POST" class="form-signin">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+          {{ form.username.label(class="form-label") }}
+          {{ form.username(class="form-control", autofocus=true) }}
+        </div>
+        <div class="form-group">
+          {{ form.password.label(class="form-label") }}
+          {{ form.password(class="form-control") }}
+        </div>
+        <button class="btn btn-lg btn-warning btn-block" type="submit">Ingresar</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
