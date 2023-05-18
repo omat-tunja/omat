@@ -7,7 +7,7 @@ from wtforms.validators import DataRequired, EqualTo, ValidationError
 import bcrypt
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://admin:Qwerty12@omat.cv5xiaopkvf0.us-east-1.rds.amazonaws.com/omat'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://admin:Qwerty12@omat.c7dc7swbqgum.us-east-2.rds.amazonaws.com/omat'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['WTF_CSRF_ENABLED'] = False
